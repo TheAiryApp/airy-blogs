@@ -36,3 +36,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           command: pages deploy .vitepress/dist --project-name=airy-blogs
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
