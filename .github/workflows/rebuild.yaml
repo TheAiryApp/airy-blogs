@@ -35,4 +35,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: pages dpeloy .vitepress/dist --project-name=airy-blogs
+          command: pages deploy .vitepress/dist --project-name=airy-blogs
