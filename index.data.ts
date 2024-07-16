@@ -5,6 +5,7 @@ interface PostExcerpt {
     path: string;
     excerpt: string;
     date?: string;
+    authors: { name?: string; avatar?: string; }[];
 }
 
 export default {
@@ -17,6 +18,7 @@ export default {
                 path: `/posts/${entry.result.path}`,
                 excerpt: entry.result.excerpt,
                 date: entry.result.published_at?.format("MM/DD/YYYY"),
+                authors: entry.result.author,
             });
         }
         return result;

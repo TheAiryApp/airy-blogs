@@ -1,11 +1,13 @@
 <script setup>
 import { useData } from 'vitepress'
+import Author from '../components/Author.vue'
 import dayjs from 'dayjs'
 
 const { title, params } = useData()
 title.value = params.value.title
 
-const authors = params.value.authors?.map(author => author.name).join(', ')
+// const authors = params.value.authors?.map(author => author.name).join(', ')
+const authors = params.value.authors ?? []
 const date = dayjs(params.value.date).format("MMMM D, YYYY")
 </script>
 
@@ -15,6 +17,8 @@ const date = dayjs(params.value.date).format("MMMM D, YYYY")
 
 <p class="post-date">{{ date }}</p>
 
-{{ authors }}
+<div class="post-authors">
+    <Author v-for="author in authors" :avatar="author.avatar" :name="author.name" />
+</div>
 
 <!-- @content -->

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .img-cover {
     margin-bottom: 2rem;
 }
@@ -5,4 +9,50 @@
 .post-date {
     font-weight: 600;
     color: var(--vp-c-text-2);
+}
+
+.post-authors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    > :not([hidden]) ~ :not([hidden]) {
+        margin-left: 0.5rem;
+    }
+    img, .avatar-placeholder {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .VPDoc:not(.has-sidebar) {
+        .container {
+            max-width: 1440px !important;
+        }
+
+        .content {
+            max-width: 960px !important;
+        }
+    }
+}
+
+.VPNavBarTitle .title {
+    font-size: 20px;
+}
+
+.VPDoc {
+    --vp-font-family-base: 'Baskerville', 'Cambria', 'Garamond', 'Bogart', 'Times New Roman', Times, serif;
+    font-family: var(--vp-font-family-base);
+}
+
+html, body {
+    font-size: 14pt;
 }

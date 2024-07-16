@@ -9,7 +9,7 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         // nav: [{ text: "Archives", link: "/archives" }],
 
-        logo: "/logo.svg",
+        logo: "/Logo.svg",
         outline: [2, 4],
         sidebar: undefined,
 
