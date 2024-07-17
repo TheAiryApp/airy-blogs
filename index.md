@@ -77,9 +77,9 @@ Welcome to the Airy blog! Here you'll find updates on the latest features, impro
 <ul class="articles">
   <li v-for="post in data" :key="post.id">
     <article>
-      <div class="post-cover">
+      <div v-if="post.cover" class="post-cover">
         <a :href="post.path">
-          <img v-if="post.cover" :src="fileCache[post.cover.slice(1)]"/>
+          <img :src="fileCache[post.cover.slice(1)]"/>
         </a>
       </div>
       <h1 class="post-title"><a :href="post.path">{{ post.title }}</a></h1>
