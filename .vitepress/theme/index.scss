@@ -6,6 +6,17 @@
     margin-bottom: 2rem;
 }
 
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--vp-c-border);
+}
+
+.post-title, .post-title a {
+    font-weight: 600;
+    color: white;
+}
+
 .post-date {
     font-weight: 600;
     color: var(--vp-c-text-2);
@@ -15,7 +26,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    // gap: 1.25rem;
+    > :not([hidden]):not(:last-child) {
+        margin-right: 1.25rem;
+    }
 }
 
 .author {
@@ -29,6 +43,22 @@
         width: 2rem;
         height: 2rem;
         border-radius: 9999px;
+    }
+}
+
+.VPDoc main {
+    figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        img {
+            margin: auto;
+        }
+        figcaption {
+            margin-top: 0.5rem;
+            color: var(--vp-c-text-2);
+        }
     }
 }
 

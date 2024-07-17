@@ -137,7 +137,12 @@ n2m.setCustomTransformer('image', async (block: unknown) => {
     );
     title = matches ? matches[0] : title;
   }
-  return md.image(title, link, false);
+  return `
+  <figure>
+    <div><img src="${link}" alt="${title}" /></div>
+    <figcaption>${caption}</figcaption>
+  </figure>
+  `
 })
 
 type N2MFileTransformArgs = VideoBlockObjectResponse | FileBlockObjectResponse | PdfBlockObjectResponse;
