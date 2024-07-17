@@ -6,9 +6,10 @@ aside: false
 outline: false
 ---
 
-<script setup>
+<script setup lang='ts'>
 import { data } from './index.data.ts'
-import Author from './components/Author.vue' 
+import { fileCache } from './.vitepress/readFileCache'
+import Author from './components/Author.vue'
 </script>
 
 <style scoped lang='scss'>
@@ -76,6 +77,11 @@ Welcome to the Airy blog! Here you'll find updates on the latest features, impro
 <ul class="articles">
   <li v-for="post in data" :key="post.id">
     <article>
+      <div class="post-cover">
+        <a :href="post.path">
+          <img v-if="post.cover" :src="fileCache[post.cover.slice(1)]"/>
+        </a>
+      </div>
       <h1 class="post-title"><a :href="post.path">{{ post.title }}</a></h1>
       <p class="post-date">{{ post.date }}</p>
       <div class="post-authors">

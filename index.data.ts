@@ -6,6 +6,7 @@ interface PostExcerpt {
     excerpt: string;
     date?: string;
     authors: { name?: string; avatar?: string; }[];
+    cover?: string;
 }
 
 export default {
@@ -19,6 +20,7 @@ export default {
                 excerpt: entry.result.excerpt,
                 date: entry.result.published_at?.format("MM/DD/YYYY"),
                 authors: entry.result.author,
+                cover: entry.result.cover,
             });
         }
         return result;
