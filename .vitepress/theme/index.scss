@@ -12,6 +12,12 @@
     border-bottom: 2px solid var(--vp-c-border);
 }
 
+.post-header + :not(hidden) {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .post-title, .post-title a {
     font-weight: 600;
     color: white;
