@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import { fileCache } from '../.vitepress/readFileCache'
 import Author from '../components/Author.vue'
+import Share from '../components/Share.vue'
 import dayjs from 'dayjs'
 
 const { title, params } = useData()
@@ -26,3 +27,5 @@ const coverImage = params.value.cover && fileCache[params.value.cover.slice(1)];
 </div>
 
 <!-- @content -->
+
+<!-- <Share /> -->

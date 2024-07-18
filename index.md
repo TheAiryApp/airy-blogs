@@ -4,6 +4,7 @@ subtext: Updates from the builder of Airy.
 index: true
 aside: false
 outline: false
+comment: false
 ---
 
 <script setup lang='ts'>
@@ -71,8 +72,6 @@ ul.articles {
 Welcome to the Airy blog! Here you'll find updates on the latest features, improvements, and news from the Airy team.
 
 <section class="latest-posts">
-
-## Latest Posts
 
 <ul class="articles">
   <li v-for="post in data" :key="post.id">
