@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import Email from './Social/Email.vue';
-import LinkedIn from './Social/LinkedIn.vue';
-import Twitter from './Social/Twitter.vue';
-import Reddit from './Social/Reddit.vue';
+import { defineClientComponent } from 'vitepress';
 
+const Email = defineClientComponent(() => import('./Social/Email.vue'));
+const LinkedIn = defineClientComponent(() => import('./Social/LinkedIn.vue'));
+const Twitter = defineClientComponent(() => import('./Social/Twitter.vue'));
+const Reddit = defineClientComponent(() => import('./Social/Reddit.vue'));
 </script>
 
 <template>
